@@ -2,7 +2,7 @@ package requests.exceptions;
 
 import requests.Response;
 
-public abstract class ResponseException extends RuntimeException {
+public class ResponseException extends RuntimeException {
 
     private Response response;
 
@@ -20,20 +20,21 @@ public abstract class ResponseException extends RuntimeException {
         switch (response.getStatusCode()){
             case 401:
                 return new UnauthorizedException(response);
-//            case 402:
-//                return new PaymentRequiredException(response);
-//            case 403:
-//                return new ForbiddenException(response);
-//            case 404:
-//                return new NotFoundException(response);
-//            case 412:
-//                return new PreconditionFailedException(response);
-//            case 413:
-//                return new RequestTooLargeException(response);
-//            case 429:
-//                return new TooManyRequestsException(response);
+            case 402:
+                return new PaymentRequiredException(response);
+            case 403:
+                return new ForbiddenException(response);
+            case 404:
+                return new NotFoundException(response);
+            case 412:
+                return new PreconditionFailedException(response);
+            case 413:
+                return new RequestTooLargeException(response);
+            case 429:
+                return new TooManyRequestsException(response);
+            default:
+                return new ResponseException(response);
         }
-        return null;
     }
 
 }

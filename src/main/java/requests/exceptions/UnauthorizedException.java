@@ -4,7 +4,7 @@ import requests.Response;
 
 public class UnauthorizedException extends ResponseException {
 
-    public UnauthorizedException(Response response) {
+    UnauthorizedException(Response response) {
         super(response);
     }
 }
