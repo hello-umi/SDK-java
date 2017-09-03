@@ -4,11 +4,12 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.SerializedName;
 
+import config.Config;
 import requests.Request;
 
 public class Agent {
 
-	private static final String BASE_URL = Request.BASE_URL + "agents/";
+	private static final String BASE_URL = Config.BASE_URL + "agents/";
 	
 	private int id;
 	@SerializedName("first_name")

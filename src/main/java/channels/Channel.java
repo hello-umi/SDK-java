@@ -5,11 +5,12 @@ import java.time.LocalDateTime;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.SerializedName;
+import config.Config;
 import requests.Request;
 
 abstract class Channel {
 
-	static final String BASE_URL = Request.BASE_URL + "channels/";
+	static final String BASE_URL = Config.BASE_URL + "channels/";
 
 	private int id;
 	private String name;

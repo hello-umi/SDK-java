@@ -24,7 +24,7 @@ public class Response {
 	}
 	
 	public JsonObject getJson() {
-		if (this.json != null)
+		if (this.json == null)
 			this.json = new JsonParser().parse(this.body).getAsJsonObject();
 		return this.json;
 	}

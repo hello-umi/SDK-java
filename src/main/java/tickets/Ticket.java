@@ -6,11 +6,12 @@ import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.SerializedName;
+import config.Config;
 import requests.Request;
 
 public class Ticket {
 
-	private static final String BASE_URL = Request.BASE_URL + "tickets/";
+	private static final String BASE_URL = Config.BASE_URL + "tickets/";
 
 	private int id;
 	@SerializedName("customer_id")

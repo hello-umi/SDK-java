@@ -8,11 +8,12 @@ import com.google.gson.JsonObject;
 import com.google.gson.annotations.SerializedName;
 
 import agents.Agent;
+import config.Config;
 import requests.Request;
 
 public class Customer {
 	
-	private static final String BASE_URL = Request.BASE_URL + "customers/";
+	private static final String BASE_URL = Config.BASE_URL + "customers/";
 
 	private int id;
 	private String name;
@@ -187,7 +188,7 @@ public class Customer {
 
 	public void assign() {
 		Request.put(BASE_URL + this.id + "/assign/");
-		this.agentId = 1; // TODO
+		this.agentId = Config.getAgentId();
 	}
 
 	public void unassign() {

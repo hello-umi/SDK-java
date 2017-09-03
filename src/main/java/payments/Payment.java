@@ -6,11 +6,12 @@ import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.SerializedName;
+import config.Config;
 import requests.Request;
 
 public class Payment {
 
-	private static final String BASE_URL = Request.BASE_URL + "payments/";
+	private static final String BASE_URL = Config.BASE_URL + "payments/";
 
 	private int id;
 	private List<Concept> concepts;
